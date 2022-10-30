@@ -16,7 +16,8 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @ManyToOne
+    //1 category associated for each product
+    @ManyToOne //Products -> 1 category for each
     @JoinColumn(name = "category_id", nullable = false)
     private ProductCategory category;
     @Column(name = "sku")

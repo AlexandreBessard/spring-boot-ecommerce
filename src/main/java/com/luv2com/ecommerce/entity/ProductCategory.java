@@ -18,6 +18,7 @@ public class ProductCategory {
     private long id;
     @Column(name = "category_name")
     private String categoryName;
+    //1 category can have multiple products associated to them
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
     private Set<Product> products;
 
