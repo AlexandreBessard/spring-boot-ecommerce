@@ -11,4 +11,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 public interface ProductRepository extends JpaRepository<Product, Long> {  //<Entity, Primary key>
     //Equivalent to : "SELECT * FROM product WHERE category_id=?"
     Page<Product> findByCategoryId(@Param("id") Long id, Pageable pageable);
+    //http://localhost:8080/api/products/search/findByNameContaining?name=Python
+    Page<Product> findByNameContaining(@Param("name") String name, Pageable page);
 }
